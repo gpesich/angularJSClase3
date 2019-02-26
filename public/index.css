@@ -1,0 +1,20 @@
+input.ng-invalid-required {    
+    border-color: brown;
+    border-width: 4px;
+}
+
+
+input.ng-pristine {
+    border-color: blue;
+    border-width: 8px;
+}
+
+input.ng-valid-email {
+    border-color: green;
+    border-width: 4px;
+}
+
+input.ng-valid-required {
+    border-color: aquamarine; 
+    border-width: 4px;
+}

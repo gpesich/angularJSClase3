@@ -1,0 +1,35 @@
+<html ng-app="CursoAngular">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <container>
+            <h3>validacion de formularios</h3>
+            
+        <div ng-controller="ControladorSuperior">                
+            <form name="frmalumno" novalidate ng-submit="frmalumno.$valid && onSubmit(alumno)">
+                <span>nombre:</span>
+                    <input type="text" name="nombre" ng-change="observarNombre()" ng-required="true" ng-model="alumno.nombre" />
+                    <span ng-show="{{mostrarAdvertencia}}">***el nombre es obligatorio</span>
+                <br /><br />
+                <span>email:</span>
+                    <input type="email" name="email" ng-required="true" ng-model="alumno.email" />
+                <br /><br />
+                <span>rut:</span>
+                    <input type="text" name="rut" ng-required="true" ng-model="alumno.rut"
+                        ng-pattern="/[0-9]{2}-[0-9]{7,8}-[0-9]{1}$/" />
+                <br /><br />
+                <input type="submit" value="enviar" />
+            </form>
+            <input type="button" ng-click="llamarServicio()" value="llamarServicio" />
+            <br />
+        </div>
+        <br />        
+        </container>
+    </body>
+</html>
